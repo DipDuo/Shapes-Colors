@@ -12,10 +12,10 @@ local json = require( "json" )
 --Button Events
 	local function handleButtonEvent( event )
 
-    if ( "ended" == event.phase ) then
-        composer.gotoScene("menu", { effect = "crossFade", time = 333 })
-    end
-	end
+   
+		composer.gotoScene("menu", { effect = "crossFade", time = 333 })
+		end
+
 	
 
 
@@ -54,10 +54,11 @@ function scene:create( event )
     sceneGroup:insert( title )
 
 	--Goes through all the buttons
-	local easyButton1 = display.newImage("Images/Levels/1g.png",true)
-    easyButton1.x=display.contentWidth*.25
-    easyButton1.y=display.contentHeight*.3
-    easyButton1:scale (.5,.5)
+	
+	--EASY BUTTON 1
+	
+	local easyButton1 = display.newCircle( display.contentWidth*.2, display.contentHeight*.3, 40)
+    easyButton1:setFillColor( 0,1,0, .5	)
     sceneGroup:insert (easyButton1)
 	
 	local function nextScene1 (lvl1)
@@ -69,185 +70,211 @@ function scene:create( event )
 	
 	
 		--If statements needed for these to decide whether or not the level is unlocked.
-    if myData.settings.easyLevel >= 2 then
-		local easyButton2 = display.newImage("Images/Levels/2g.png")
-		easyButton2.x=display.contentWidth*.5
-		easyButton2.y=display.contentHeight*.3
-		easyButton2:scale (.5,.5)
-		sceneGroup:insert (easyButton2)
-		local function nextScene2 (lvl2)
+		
+	--EASY BUTTON 2
     
-        composer.gotoScene("match2e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+	local easyButton2 = display.newCircle( display.contentWidth*.5, display.contentHeight*.3, 40)
+	if myData.settings.easyLevel >= 2 then
+		easyButton2:setFillColor( 0,1,0, .5	)
+		local function nextScene2 (lvl2)
 			
+		composer.gotoScene("match2e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+	   
 		end
 		easyButton2:addEventListener("tap", nextScene2)
 	else
-		local easyButton2 = display.newImage("Images/Levels/2r.png")
-		easyButton2.x=display.contentWidth*.5
-		easyButton2.y=display.contentHeight*.3
-		easyButton2:scale (.5,.5)
-		sceneGroup:insert (easyButton2)
+		easyButton2:setFillColor( 1,0,0, .5	)
 	end
-    
-    if myData.settings.easyLevel >= 3 then
-		local easyButton3 = display.newImage("Images/Levels/3g.png")
-		easyButton3.x=display.contentWidth*.75
-		easyButton3.y=display.contentHeight*.3
-		easyButton3:scale (.5,.5)
-		sceneGroup:insert (easyButton3)
-		local function nextScene3 (lvl3)
-        
-       composer.gotoScene("match3e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+	sceneGroup:insert (easyButton2)
 		
+		
+	--EASY BUTTON 3
+		
+	local easyButton3 = display.newCircle( display.contentWidth*.8, display.contentHeight*.3, 40)
+	if myData.settings.easyLevel >= 3 then
+		easyButton3:setFillColor( 0,1,0, .5	)
+		local function nextScene3 (lvl3)
+			
+		composer.gotoScene("match3e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+	   
 		end
 		easyButton3:addEventListener("tap", nextScene3)
-	
 	else
-		local easyButton3 = display.newImage("Images/Levels/3r.png")
-		easyButton3.x=display.contentWidth*.75
-		easyButton3.y=display.contentHeight*.3
-		easyButton3:scale (.5,.5)
-		sceneGroup:insert (easyButton3)
+		easyButton3:setFillColor( 1,0,0, .5	)
 	end
-
+		
+	sceneGroup:insert (easyButton3)
 	
+	
+	--EASY BUTTON 4
+	
+	local easyButton4 = display.newCircle( display.contentWidth*.2, display.contentHeight*.5, 40)
 	if myData.settings.easyLevel >= 4 then
-		local easyButton4 = display.newImage("Images/Levels/4g.png")
-		easyButton4.x=display.contentWidth*.25
-		easyButton4.y=display.contentHeight*.5
-		easyButton4:scale (.5,.5)
-		sceneGroup:insert (easyButton4)
+		easyButton4:setFillColor( 0,1,0, .5	)
 		local function nextScene4 (lvl4)
-        
-        composer.gotoScene("match4e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match4e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		easyButton4:addEventListener("tap", nextScene4)
 	else
-		local easyButton4 = display.newImage("Images/Levels/4r.png")
-		easyButton4.x=display.contentWidth*.25
-		easyButton4.y=display.contentHeight*.5
-		easyButton4:scale (.5,.5)
-		sceneGroup:insert (easyButton4)
+		easyButton4:setFillColor( 1,0,0, .5	)
 	end
+	sceneGroup:insert (easyButton4)
+	
 
+    --EASY BUTTON 5
 
-    if myData.settings.easyLevel >= 5 then
-		local easyButton5 = display.newImage("Images/Levels/5g.png")
-		easyButton5.x=display.contentWidth*.5
-		easyButton5.y=display.contentHeight*.5
-		easyButton5:scale (.5,.5)
-		sceneGroup:insert (easyButton5)
+	local easyButton5 = display.newCircle( display.contentWidth*.5, display.contentHeight*.5, 40)
+	if myData.settings.easyLevel >= 5 then
+		easyButton5:setFillColor( 0,1,0, .5	)
 		local function nextScene5 (lvl5)
-        
-       composer.gotoScene("match5e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match5e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		easyButton5:addEventListener("tap", nextScene5)
 	else
-		local easyButton5 = display.newImage("Images/Levels/5r.png")
-	    easyButton5.x=display.contentWidth*.5
-		easyButton5.y=display.contentHeight*.5
-		easyButton5:scale (.5,.5)
-		sceneGroup:insert (easyButton5)
+		easyButton5:setFillColor( 1,0,0, .5	)
 	end
-
-    
-    if myData.settings.easyLevel >= 6 then
-		local easyButton6 = display.newImage("Images/Levels/6g.png")
-	    easyButton6.x=display.contentWidth*.75
-		easyButton6.y=display.contentHeight*.5
-		easyButton6:scale (.5,.5)
-		sceneGroup:insert (easyButton6)
+	sceneGroup:insert (easyButton5)
+	
+	
+	--EASY BUTTON 6
+	
+	local easyButton6 = display.newCircle( display.contentWidth*.8, display.contentHeight*.5, 40)
+	if myData.settings.easyLevel >= 6 then
+		easyButton6:setFillColor( 0,1,0, .5	)
 		local function nextScene6 (lvl6)
-        
-       composer.gotoScene("match6e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match6e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		easyButton6:addEventListener("tap", nextScene6)
 	else
-		local easyButton6 = display.newImage("Images/Levels/6r.png")
-	    easyButton6.x=display.contentWidth*.75
-		easyButton6.y=display.contentHeight*.5
-		easyButton6:scale (.5,.5)
-		sceneGroup:insert (easyButton6)
+		easyButton6:setFillColor( 1,0,0, .5	)
 	end
-
-
-    if myData.settings.easyLevel >= 7 then
-		local easyButton7 = display.newImage("Images/Levels/7g.png")
-	    easyButton7.x=display.contentWidth*.25
-		easyButton7.y=display.contentHeight*.7
-		easyButton7:scale (.5,.5)
-		sceneGroup:insert (easyButton7)
+	sceneGroup:insert (easyButton6)
+	
+	
+	--EASY BUTTON 7
+	
+	local easyButton7 = display.newCircle( display.contentWidth*.2, display.contentHeight*.7, 40)
+	if myData.settings.easyLevel >= 7 then
+		easyButton7:setFillColor( 0,1,0, .5	)
 		local function nextScene7 (lvl7)
-        
-       composer.gotoScene("match7e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match7e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		easyButton7:addEventListener("tap", nextScene7)
-	
 	else
-		local easyButton7 = display.newImage("Images/Levels/7r.png")
-	    easyButton7.x=display.contentWidth*.25
-		easyButton7.y=display.contentHeight*.7
-		easyButton7:scale (.5,.5)
-		sceneGroup:insert (easyButton7)
+		easyButton7:setFillColor( 1,0,0, .5	)
 	end
-
+	sceneGroup:insert (easyButton7)
 	
-    if myData.settings.easyLevel >= 8 then
-		local easyButton8 = display.newImage("Images/Levels/8g.png")
-		easyButton8.x=display.contentWidth*.5
-		easyButton8.y=display.contentHeight*.7
-		easyButton8:scale (.5,.5)
-		sceneGroup:insert (easyButton8)
+	
+	--EASY BUTTON 8
+	
+	local easyButton8 = display.newCircle( display.contentWidth*.5, display.contentHeight*.7, 40)
+	if myData.settings.easyLevel >= 8 then
+		easyButton8:setFillColor( 0,1,0, .5	)
 		local function nextScene8 (lvl8)
-        
-       composer.gotoScene("match8e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match8e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		easyButton8:addEventListener("tap", nextScene8)
 	else
-		local easyButton8 = display.newImage("Images/Levels/8r.png")
-		easyButton8.x=display.contentWidth*.5
-		easyButton8.y=display.contentHeight*.7
-		easyButton8:scale (.5,.5)
-		sceneGroup:insert (easyButton8)
+		easyButton8:setFillColor( 1,0,0, .5	)
 	end
+	sceneGroup:insert (easyButton8)
 	
-    
+	
+	--EASY BUTTON 9
+	
+	local easyButton9 = display.newCircle( display.contentWidth*.8, display.contentHeight*.7, 40)
 	if myData.settings.easyLevel >= 9 then
-		local easyButton9 = display.newImage("Images/Levels/9g.png")
-		easyButton9.x=display.contentWidth*.75
-		easyButton9.y=display.contentHeight*.7
-		easyButton9:scale (.5,.5)
-		sceneGroup:insert (easyButton9)
+		easyButton9:setFillColor( 0,1,0, .5	)
 		local function nextScene9 (lvl9)
-        
-       composer.gotoScene("match9e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match9e", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		easyButton9:addEventListener("tap", nextScene9)
 	else
-		local easyButton9 = display.newImage("Images/Levels/9r.png")
-		easyButton9.x=display.contentWidth*.75
-		easyButton9.y=display.contentHeight*.7
-		easyButton9:scale (.5,.5)
-		sceneGroup:insert (easyButton9)
+		easyButton9:setFillColor( 1,0,0, .5	)
 	end
+	sceneGroup:insert (easyButton9)
 	
-	    -- Create the widget
-    local doneButton = widget.newButton({
-        id = "button1",
-        label = "Return to Menu",
-        width = 200,
-        height = 32,
-        onEvent = handleButtonEvent
-    })
-    doneButton.x = display.contentCenterX 
-    doneButton.y = display.contentHeight * .85
-    sceneGroup:insert( doneButton )
+	local easyButton1Text = display.newText("1", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	easyButton1Text.x = display.contentWidth * .2
+	easyButton1Text.y = display.contentHeight * .3
+	easyButton1Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( easyButton1Text )
+		
+	local easyButton2Text = display.newText("2", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	easyButton2Text.x = display.contentWidth * .5
+	easyButton2Text.y = display.contentHeight * .3
+	easyButton2Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( easyButton2Text )
+
+	local easyButton3Text = display.newText("3", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	easyButton3Text.x = display.contentWidth * .8
+	easyButton3Text.y = display.contentHeight * .3
+	easyButton3Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( easyButton3Text )
+	
+	local easyButton4Text = display.newText("4", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	easyButton4Text.x = display.contentWidth * .2
+	easyButton4Text.y = display.contentHeight * .5
+	easyButton4Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( easyButton4Text )
+	
+	local easyButton5Text = display.newText("5", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	easyButton5Text.x = display.contentWidth * .5
+	easyButton5Text.y = display.contentHeight * .5
+	easyButton5Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( easyButton5Text )
+	
+	local easyButton6Text = display.newText("6", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	easyButton6Text.x = display.contentWidth * .8
+	easyButton6Text.y = display.contentHeight * .5
+	easyButton6Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( easyButton6Text )
+	
+	local easyButton7Text = display.newText("7", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	easyButton7Text.x = display.contentWidth * .2
+	easyButton7Text.y = display.contentHeight * .7
+	easyButton7Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( easyButton7Text )
+	
+	local easyButton8Text = display.newText("8", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	easyButton8Text.x = display.contentWidth * .5
+	easyButton8Text.y = display.contentHeight * .7
+	easyButton8Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( easyButton8Text )
+	
+	local easyButton9Text = display.newText("9", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	easyButton9Text.x = display.contentWidth * .8
+	easyButton9Text.y = display.contentHeight * .7
+	easyButton9Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( easyButton9Text )
+	
+	
+	local backButton = display.newRect( 0, 0, display.contentWidth/2.5, 50 )
+	backButton:setFillColor( 0, 0, 0, 100/255)
+	backButton.x = display.contentCenterX
+	backButton.y = display.contentHeight * .9
+	backButton:addEventListener( "tap", handleButtonEvent )
+	sceneGroup:insert( backButton )
+	
+	local backButtonText = display.newText("Back", 100, 32, "Fonts/HemiHead.tff", 25 )
+	backButtonText.x = display.contentCenterX
+	backButtonText.y = display.contentHeight * .9
+	backButtonText:setFillColor( 1, 1, 1, .9 )
+	sceneGroup:insert( backButtonText )
+
 end
 	
 	-------------------------------------------------------------------------------------------------------------

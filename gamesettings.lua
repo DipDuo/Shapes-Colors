@@ -41,10 +41,7 @@ end
 
 -- Function to handle button events
 local function handleButtonEvent( event )
-
-    if ( "ended" == event.phase ) then
         composer.gotoScene("menu", { effect = "crossFade", time = 333 })
-    end
 end
 
 ---------------------------------------------------------------------------------------------------------------
@@ -106,17 +103,18 @@ function scene:create( event )
     musicOnOffSwitch.y = musicLabel.y
     sceneGroup:insert( musicOnOffSwitch )
 
-    -- Create the widget
-    local doneButton = widget.newButton({
-        id = "button1",
-        label = "Return to Menu",
-        width = 200,
-        height = 32,
-        onEvent = handleButtonEvent
-    })
-    doneButton.x = display.contentCenterX 
-    doneButton.y = display.contentHeight - 40
-    sceneGroup:insert( doneButton )
+	local backButton = display.newRect( 0, 0, display.contentWidth/2.5, 50 )
+	backButton:setFillColor( 0, 0, 0, 100/255)
+	backButton.x = display.contentCenterX
+	backButton.y = display.contentHeight * .9
+	backButton:addEventListener( "tap", handleButtonEvent )
+	sceneGroup:insert( backButton )
+	
+	local backButtonText = display.newText("Back", 100, 32, "Fonts/HemiHead.tff", 25 )
+	backButtonText.x = display.contentCenterX
+	backButtonText.y = display.contentHeight * .9
+	backButtonText:setFillColor( 1, 1, 1, .9 )
+	sceneGroup:insert( backButtonText )
 
 end
 

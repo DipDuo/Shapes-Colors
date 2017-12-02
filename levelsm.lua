@@ -11,11 +11,9 @@ local json = require( "json" )
 --------------------------------------------------------------------------------------------------------------------------
 --Button Events
 	local function handleButtonEvent( event )
-
-    if ( "ended" == event.phase ) then
         composer.gotoScene("menu", { effect = "crossFade", time = 333 })
-    end
 	end
+
 	
 
 
@@ -54,10 +52,11 @@ function scene:create( event )
     sceneGroup:insert( title )
 
 	--Goes through all the buttons
-	local medButton1 = display.newImage("Images/Levels/1g.png")
-    medButton1.x=display.contentWidth*.25
-    medButton1.y=display.contentHeight*.3
-    medButton1:scale (.5,.5)
+	
+	--MED BUTTON 1
+	
+	local medButton1 = display.newCircle( display.contentWidth*.2, display.contentHeight*.3, 40)
+    medButton1:setFillColor( 0,1,0, .5	)
     sceneGroup:insert (medButton1)
 	
 	local function nextScene1 (lvl1)
@@ -69,185 +68,210 @@ function scene:create( event )
 	
 	
 		--If statements needed for these to decide whether or not the level is unlocked.
-    if myData.settings.medLevel >= 2 then
-		local medButton2 = display.newImage("Images/Levels/2g.png")
-		medButton2.x=display.contentWidth*.5
-		medButton2.y=display.contentHeight*.3
-		medButton2:scale (.5,.5)
-		sceneGroup:insert (medButton2)
-		local function nextScene2 (lvl2)
+		
+	--MED BUTTON 2
     
-        composer.gotoScene("match2", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+	local medButton2 = display.newCircle( display.contentWidth*.5, display.contentHeight*.3, 40)
+	if myData.settings.medLevel >= 2 then
+		medButton2:setFillColor( 0,1,0, .5	)
+		local function nextScene2 (lvl2)
 			
+		composer.gotoScene("match2", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+	   
 		end
 		medButton2:addEventListener("tap", nextScene2)
 	else
-		local medButton2 = display.newImage("Images/Levels/2r.png")
-		medButton2.x=display.contentWidth*.5
-		medButton2.y=display.contentHeight*.3
-		medButton2:scale (.5,.5)
-		sceneGroup:insert (medButton2)
+		medButton2:setFillColor( 1,0,0, .5	)
 	end
-    
-    if myData.settings.medLevel >= 3 then
-		local medButton3 = display.newImage("Images/Levels/3g.png")
-		medButton3.x=display.contentWidth*.75
-		medButton3.y=display.contentHeight*.3
-		medButton3:scale (.5,.5)
-		sceneGroup:insert (medButton3)
-		local function nextScene3 (lvl3)
-        
-       composer.gotoScene("match3", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+	sceneGroup:insert (medButton2)
 		
+		
+	--MED BUTTON 3
+		
+	local medButton3 = display.newCircle( display.contentWidth*.8, display.contentHeight*.3, 40)
+	if myData.settings.medLevel >= 3 then
+		medButton3:setFillColor( 0,1,0, .5	)
+		local function nextScene3 (lvl3)
+			
+		composer.gotoScene("match3", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+	   
 		end
 		medButton3:addEventListener("tap", nextScene3)
-	
 	else
-		local medButton3 = display.newImage("Images/Levels/3r.png")
-		medButton3.x=display.contentWidth*.75
-		medButton3.y=display.contentHeight*.3
-		medButton3:scale (.5,.5)
-		sceneGroup:insert (medButton3)
+		medButton3:setFillColor( 1,0,0, .5	)
 	end
-
+		
+	sceneGroup:insert (medButton3)
 	
+	
+	--MED BUTTON 4
+	
+	local medButton4 = display.newCircle( display.contentWidth*.2, display.contentHeight*.5, 40)
 	if myData.settings.medLevel >= 4 then
-		local medButton4 = display.newImage("Images/Levels/4g.png")
-		medButton4.x=display.contentWidth*.25
-		medButton4.y=display.contentHeight*.5
-		medButton4:scale (.5,.5)
-		sceneGroup:insert (medButton4)
+		medButton4:setFillColor( 0,1,0, .5	)
 		local function nextScene4 (lvl4)
-        
-        composer.gotoScene("match4", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match4", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		medButton4:addEventListener("tap", nextScene4)
 	else
-		local medButton4 = display.newImage("Images/Levels/4r.png")
-		medButton4.x=display.contentWidth*.25
-		medButton4.y=display.contentHeight*.5
-		medButton4:scale (.5,.5)
-		sceneGroup:insert (medButton4)
+		medButton4:setFillColor( 1,0,0, .5	)
 	end
+	sceneGroup:insert (medButton4)
+	
 
+    --MED BUTTON 5
 
-    if myData.settings.medLevel >= 5 then
-		local medButton5 = display.newImage("Images/Levels/5g.png")
-		medButton5.x=display.contentWidth*.5
-		medButton5.y=display.contentHeight*.5
-		medButton5:scale (.5,.5)
-		sceneGroup:insert (medButton5)
+	local medButton5 = display.newCircle( display.contentWidth*.5, display.contentHeight*.5, 40)
+	if myData.settings.medLevel >= 5 then
+		medButton5:setFillColor( 0,1,0, .5	)
 		local function nextScene5 (lvl5)
-        
-       composer.gotoScene("match5", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match5", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		medButton5:addEventListener("tap", nextScene5)
 	else
-		local medButton5 = display.newImage("Images/Levels/5r.png")
-	    medButton5.x=display.contentWidth*.5
-		medButton5.y=display.contentHeight*.5
-		medButton5:scale (.5,.5)
-		sceneGroup:insert (medButton5)
+		medButton5:setFillColor( 1,0,0, .5	)
 	end
-
-    
-    if myData.settings.medLevel >= 6 then
-		local medButton6 = display.newImage("Images/Levels/6g.png")
-	    medButton6.x=display.contentWidth*.75
-		medButton6.y=display.contentHeight*.5
-		medButton6:scale (.5,.5)
-		sceneGroup:insert (medButton6)
+	sceneGroup:insert (medButton5)
+	
+	
+	--MED BUTTON 6
+	
+	local medButton6 = display.newCircle( display.contentWidth*.8, display.contentHeight*.5, 40)
+	if myData.settings.medLevel >= 6 then
+		medButton6:setFillColor( 0,1,0, .5	)
 		local function nextScene6 (lvl6)
-        
-       composer.gotoScene("match6", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match6", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		medButton6:addEventListener("tap", nextScene6)
 	else
-		local medButton6 = display.newImage("Images/Levels/6r.png")
-	    medButton6.x=display.contentWidth*.75
-		medButton6.y=display.contentHeight*.5
-		medButton6:scale (.5,.5)
-		sceneGroup:insert (medButton6)
+		medButton6:setFillColor( 1,0,0, .5	)
 	end
-
-
-    if myData.settings.medLevel >= 7 then
-		local medButton7 = display.newImage("Images/Levels/7g.png")
-	    medButton7.x=display.contentWidth*.25
-		medButton7.y=display.contentHeight*.7
-		medButton7:scale (.5,.5)
-		sceneGroup:insert (medButton7)
+	sceneGroup:insert (medButton6)
+	
+	
+	--MED BUTTON 7
+	
+	local medButton7 = display.newCircle( display.contentWidth*.2, display.contentHeight*.7, 40)
+	if myData.settings.medLevel >= 7 then
+		medButton7:setFillColor( 0,1,0, .5	)
 		local function nextScene7 (lvl7)
-        
-       composer.gotoScene("match7", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match7", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		medButton7:addEventListener("tap", nextScene7)
-	
 	else
-		local medButton7 = display.newImage("Images/Levels/7r.png")
-	    medButton7.x=display.contentWidth*.25
-		medButton7.y=display.contentHeight*.7
-		medButton7:scale (.5,.5)
-		sceneGroup:insert (medButton7)
+		medButton7:setFillColor( 1,0,0, .5	)
 	end
-
+	sceneGroup:insert (medButton7)
 	
-    if myData.settings.medLevel >= 8 then
-		local medButton8 = display.newImage("Images/Levels/8g.png")
-		medButton8.x=display.contentWidth*.5
-		medButton8.y=display.contentHeight*.7
-		medButton8:scale (.5,.5)
-		sceneGroup:insert (medButton8)
+	
+	--MED BUTTON 8
+	
+	local medButton8 = display.newCircle( display.contentWidth*.5, display.contentHeight*.7, 40)
+	if myData.settings.medLevel >= 8 then
+		medButton8:setFillColor( 0,1,0, .5	)
 		local function nextScene8 (lvl8)
-        
-       composer.gotoScene("match8", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match8", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		medButton8:addEventListener("tap", nextScene8)
 	else
-		local medButton8 = display.newImage("Images/Levels/8r.png")
-		medButton8.x=display.contentWidth*.5
-		medButton8.y=display.contentHeight*.7
-		medButton8:scale (.5,.5)
-		sceneGroup:insert (medButton8)
+		medButton8:setFillColor( 1,0,0, .5	)
 	end
+	sceneGroup:insert (medButton8)
 	
-    
+	
+	--MED BUTTON 9
+	
+	local medButton9 = display.newCircle( display.contentWidth*.8, display.contentHeight*.7, 40)
 	if myData.settings.medLevel >= 9 then
-		local medButton9 = display.newImage("Images/Levels/9g.png")
-		medButton9.x=display.contentWidth*.75
-		medButton9.y=display.contentHeight*.7
-		medButton9:scale (.5,.5)
-		sceneGroup:insert (medButton9)
+		medButton9:setFillColor( 0,1,0, .5	)
 		local function nextScene9 (lvl9)
-        
-       composer.gotoScene("match9", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match9", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		medButton9:addEventListener("tap", nextScene9)
 	else
-		local medButton9 = display.newImage("Images/Levels/9r.png")
-		medButton9.x=display.contentWidth*.75
-		medButton9.y=display.contentHeight*.7
-		medButton9:scale (.5,.5)
-		sceneGroup:insert (medButton9)
+		medButton9:setFillColor( 1,0,0, .5	)
 	end
+	sceneGroup:insert (medButton9)
 	
-	    -- Create the widget
-    local doneButton = widget.newButton({
-        id = "button1",
-        label = "Return to Menu",
-        width = 200,
-        height = 32,
-        onEvent = handleButtonEvent
-    })
-    doneButton.x = display.contentCenterX 
-    doneButton.y = display.contentHeight * .85
-    sceneGroup:insert( doneButton )
+	local medButton1Text = display.newText("1", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	medButton1Text.x = display.contentWidth * .2
+	medButton1Text.y = display.contentHeight * .3
+	medButton1Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( medButton1Text )
+		
+	local medButton2Text = display.newText("2", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	medButton2Text.x = display.contentWidth * .5
+	medButton2Text.y = display.contentHeight * .3
+	medButton2Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( medButton2Text )
+
+	local medButton3Text = display.newText("3", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	medButton3Text.x = display.contentWidth * .8
+	medButton3Text.y = display.contentHeight * .3
+	medButton3Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( medButton3Text )
+	
+	local medButton4Text = display.newText("4", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	medButton4Text.x = display.contentWidth * .2
+	medButton4Text.y = display.contentHeight * .5
+	medButton4Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( medButton4Text )
+	
+	local medButton5Text = display.newText("5", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	medButton5Text.x = display.contentWidth * .5
+	medButton5Text.y = display.contentHeight * .5
+	medButton5Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( medButton5Text )
+	
+	local medButton6Text = display.newText("6", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	medButton6Text.x = display.contentWidth * .8
+	medButton6Text.y = display.contentHeight * .5
+	medButton6Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( medButton6Text )
+	
+	local medButton7Text = display.newText("7", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	medButton7Text.x = display.contentWidth * .2
+	medButton7Text.y = display.contentHeight * .7
+	medButton7Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( medButton7Text )
+	
+	local medButton8Text = display.newText("8", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	medButton8Text.x = display.contentWidth * .5
+	medButton8Text.y = display.contentHeight * .7
+	medButton8Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( medButton8Text )
+	
+	local medButton9Text = display.newText("9", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	medButton9Text.x = display.contentWidth * .8
+	medButton9Text.y = display.contentHeight * .7
+	medButton9Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( medButton9Text )
+	
+	local backButton = display.newRect( 0, 0, display.contentWidth/2.5, 50 )
+	backButton:setFillColor( 0, 0, 0, 100/255)
+	backButton.x = display.contentCenterX
+	backButton.y = display.contentHeight * .9
+	backButton:addEventListener( "tap", handleButtonEvent )
+	sceneGroup:insert( backButton )
+	
+	local backButtonText = display.newText("Back", 100, 32, "Fonts/HemiHead.tff", 25 )
+	backButtonText.x = display.contentCenterX
+	backButtonText.y = display.contentHeight * .9
+	backButtonText:setFillColor( 1, 1, 1, .9 )
+	sceneGroup:insert( backButtonText )
+	
 end
 	
 	-------------------------------------------------------------------------------------------------------------

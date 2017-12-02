@@ -11,10 +11,7 @@ local json = require( "json" )
 --------------------------------------------------------------------------------------------------------------------------
 --Button Events
 	local function handleButtonEvent( event )
-
-    if ( "ended" == event.phase ) then
         composer.gotoScene("menu", { effect = "crossFade", time = 333 })
-    end
 	end
 	
 
@@ -54,10 +51,10 @@ function scene:create( event )
     sceneGroup:insert( title )
 
 	--Goes through all the buttons
-	local hardButton1 = display.newImage("Images/Levels/1g.png")
-    hardButton1.x=display.contentWidth*.25
-    hardButton1.y=display.contentHeight*.3
-    hardButton1:scale (.5,.5)
+	--HARD BUTTON 1
+	
+	local hardButton1 = display.newCircle( display.contentWidth*.2, display.contentHeight*.3, 40)
+    hardButton1:setFillColor( 0,1,0, .5	)
     sceneGroup:insert (hardButton1)
 	
 	local function nextScene1 (lvl1)
@@ -69,185 +66,210 @@ function scene:create( event )
 	
 	
 		--If statements needed for these to decide whether or not the level is unlocked.
-    if myData.settings.hardLevel >= 2 then
-		local hardButton2 = display.newImage("Images/Levels/2g.png")
-		hardButton2.x=display.contentWidth*.5
-		hardButton2.y=display.contentHeight*.3
-		hardButton2:scale (.5,.5)
-		sceneGroup:insert (hardButton2)
-		local function nextScene2 (lvl2)
+		
+	--HARD BUTTON 2
     
-        composer.gotoScene("match2h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+	local hardButton2 = display.newCircle( display.contentWidth*.5, display.contentHeight*.3, 40)
+	if myData.settings.hardLevel >= 2 then
+		hardButton2:setFillColor( 0,1,0, .5	)
+		local function nextScene2 (lvl2)
 			
+		composer.gotoScene("match2h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+	   
 		end
 		hardButton2:addEventListener("tap", nextScene2)
 	else
-		local hardButton2 = display.newImage("Images/Levels/2r.png")
-		hardButton2.x=display.contentWidth*.5
-		hardButton2.y=display.contentHeight*.3
-		hardButton2:scale (.5,.5)
-		sceneGroup:insert (hardButton2)
+		hardButton2:setFillColor( 1,0,0, .5	)
 	end
-    
-    if myData.settings.hardLevel >= 3 then
-		local hardButton3 = display.newImage("Images/Levels/3g.png")
-		hardButton3.x=display.contentWidth*.75
-		hardButton3.y=display.contentHeight*.3
-		hardButton3:scale (.5,.5)
-		sceneGroup:insert (hardButton3)
-		local function nextScene3 (lvl3)
-        
-       composer.gotoScene("match3h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+	sceneGroup:insert (hardButton2)
 		
+		
+	--HARD BUTTON 3
+		
+	local hardButton3 = display.newCircle( display.contentWidth*.8, display.contentHeight*.3, 40)
+	if myData.settings.hardLevel >= 3 then
+		hardButton3:setFillColor( 0,1,0, .5	)
+		local function nextScene3 (lvl3)
+			
+		composer.gotoScene("match3h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+	   
 		end
 		hardButton3:addEventListener("tap", nextScene3)
-	
 	else
-		local hardButton3 = display.newImage("Images/Levels/3r.png")
-		hardButton3.x=display.contentWidth*.75
-		hardButton3.y=display.contentHeight*.3
-		hardButton3:scale (.5,.5)
-		sceneGroup:insert (hardButton3)
+		hardButton3:setFillColor( 1,0,0, .5	)
 	end
-
+		
+	sceneGroup:insert (hardButton3)
 	
+	
+	--HARD BUTTON 4
+	
+	local hardButton4 = display.newCircle( display.contentWidth*.2, display.contentHeight*.5, 40)
 	if myData.settings.hardLevel >= 4 then
-		local hardButton4 = display.newImage("Images/Levels/4g.png")
-		hardButton4.x=display.contentWidth*.25
-		hardButton4.y=display.contentHeight*.5
-		hardButton4:scale (.5,.5)
-		sceneGroup:insert (hardButton4)
+		hardButton4:setFillColor( 0,1,0, .5	)
 		local function nextScene4 (lvl4)
-        
-        composer.gotoScene("match4h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match4h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		hardButton4:addEventListener("tap", nextScene4)
 	else
-		local hardButton4 = display.newImage("Images/Levels/4r.png")
-		hardButton4.x=display.contentWidth*.25
-		hardButton4.y=display.contentHeight*.5
-		hardButton4:scale (.5,.5)
-		sceneGroup:insert (hardButton4)
+		hardButton4:setFillColor( 1,0,0, .5	)
 	end
+	sceneGroup:insert (hardButton4)
+	
 
+    --HARD BUTTON 5
 
-    if myData.settings.hardLevel >= 5 then
-		local hardButton5 = display.newImage("Images/Levels/5g.png")
-		hardButton5.x=display.contentWidth*.5
-		hardButton5.y=display.contentHeight*.5
-		hardButton5:scale (.5,.5)
-		sceneGroup:insert (hardButton5)
+	local hardButton5 = display.newCircle( display.contentWidth*.5, display.contentHeight*.5, 40)
+	if myData.settings.hardLevel >= 5 then
+		hardButton5:setFillColor( 0,1,0, .5	)
 		local function nextScene5 (lvl5)
-        
-       composer.gotoScene("match5h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match5h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		hardButton5:addEventListener("tap", nextScene5)
 	else
-		local hardButton5 = display.newImage("Images/Levels/5r.png")
-	    hardButton5.x=display.contentWidth*.5
-		hardButton5.y=display.contentHeight*.5
-		hardButton5:scale (.5,.5)
-		sceneGroup:insert (hardButton5)
+		hardButton5:setFillColor( 1,0,0, .5	)
 	end
-
-    
-    if myData.settings.hardLevel >= 6 then
-		local hardButton6 = display.newImage("Images/Levels/6g.png")
-	    hardButton6.x=display.contentWidth*.75
-		hardButton6.y=display.contentHeight*.5
-		hardButton6:scale (.5,.5)
-		sceneGroup:insert (hardButton6)
+	sceneGroup:insert (hardButton5)
+	
+	
+	--HARD BUTTON 6
+	
+	local hardButton6 = display.newCircle( display.contentWidth*.8, display.contentHeight*.5, 40)
+	if myData.settings.hardLevel >= 6 then
+		hardButton6:setFillColor( 0,1,0, .5	)
 		local function nextScene6 (lvl6)
-        
-       composer.gotoScene("match6h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match6h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		hardButton6:addEventListener("tap", nextScene6)
 	else
-		local hardButton6 = display.newImage("Images/Levels/6r.png")
-	    hardButton6.x=display.contentWidth*.75
-		hardButton6.y=display.contentHeight*.5
-		hardButton6:scale (.5,.5)
-		sceneGroup:insert (hardButton6)
+		hardButton6:setFillColor( 1,0,0, .5	)
 	end
-
-
-    if myData.settings.hardLevel >= 7 then
-		local hardButton7 = display.newImage("Images/Levels/7g.png")
-	    hardButton7.x=display.contentWidth*.25
-		hardButton7.y=display.contentHeight*.7
-		hardButton7:scale (.5,.5)
-		sceneGroup:insert (hardButton7)
+	sceneGroup:insert (hardButton6)
+	
+	
+	--HARD BUTTON 7
+	
+	local hardButton7 = display.newCircle( display.contentWidth*.2, display.contentHeight*.7, 40)
+	if myData.settings.hardLevel >= 7 then
+		hardButton7:setFillColor( 0,1,0, .5	)
 		local function nextScene7 (lvl7)
-        
-       composer.gotoScene("match7h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match7h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		hardButton7:addEventListener("tap", nextScene7)
-	
 	else
-		local hardButton7 = display.newImage("Images/Levels/7r.png")
-	    hardButton7.x=display.contentWidth*.25
-		hardButton7.y=display.contentHeight*.7
-		hardButton7:scale (.5,.5)
-		sceneGroup:insert (hardButton7)
+		hardButton7:setFillColor( 1,0,0, .5	)
 	end
-
+	sceneGroup:insert (hardButton7)
 	
-    if myData.settings.hardLevel >= 8 then
-		local hardButton8 = display.newImage("Images/Levels/8g.png")
-		hardButton8.x=display.contentWidth*.5
-		hardButton8.y=display.contentHeight*.7
-		hardButton8:scale (.5,.5)
-		sceneGroup:insert (hardButton8)
+	
+	--HARD BUTTON 8
+	
+	local hardButton8 = display.newCircle( display.contentWidth*.5, display.contentHeight*.7, 40)
+	if myData.settings.hardLevel >= 8 then
+		hardButton8:setFillColor( 0,1,0, .5	)
 		local function nextScene8 (lvl8)
-        
-       composer.gotoScene("match8h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match8h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		hardButton8:addEventListener("tap", nextScene8)
 	else
-		local hardButton8 = display.newImage("Images/Levels/8r.png")
-		hardButton8.x=display.contentWidth*.5
-		hardButton8.y=display.contentHeight*.7
-		hardButton8:scale (.5,.5)
-		sceneGroup:insert (hardButton8)
+		hardButton8:setFillColor( 1,0,0, .5	)
 	end
+	sceneGroup:insert (hardButton8)
 	
-    
+	
+	--HARD BUTTON 9
+	
+	local hardButton9 = display.newCircle( display.contentWidth*.8, display.contentHeight*.7, 40)
 	if myData.settings.hardLevel >= 9 then
-		local hardButton9 = display.newImage("Images/Levels/9g.png")
-		hardButton9.x=display.contentWidth*.75
-		hardButton9.y=display.contentHeight*.7
-		hardButton9:scale (.5,.5)
-		sceneGroup:insert (hardButton9)
+		hardButton9:setFillColor( 0,1,0, .5	)
 		local function nextScene9 (lvl9)
-        
-       composer.gotoScene("match9h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
+			
+		composer.gotoScene("match9h", { effect = "crossFade", time = 333 }) --the scene/level that tap function transitions to
 	   
 		end
 		hardButton9:addEventListener("tap", nextScene9)
 	else
-		local hardButton9 = display.newImage("Images/Levels/9r.png")
-		hardButton9.x=display.contentWidth*.75
-		hardButton9.y=display.contentHeight*.7
-		hardButton9:scale (.5,.5)
-		sceneGroup:insert (hardButton9)
+		hardButton9:setFillColor( 1,0,0, .5	)
 	end
+	sceneGroup:insert (hardButton9)
 	
-	    -- Create the widget
-    local doneButton = widget.newButton({
-        id = "button1",
-        label = "Return to Menu",
-        width = 200,
-        height = 32,
-        onEvent = handleButtonEvent
-    })
-    doneButton.x = display.contentCenterX 
-    doneButton.y = display.contentHeight * .85
-    sceneGroup:insert( doneButton )
+	local hardButton1Text = display.newText("1", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	hardButton1Text.x = display.contentWidth * .2
+	hardButton1Text.y = display.contentHeight * .3
+	hardButton1Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( hardButton1Text )
+		
+	local hardButton2Text = display.newText("2", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	hardButton2Text.x = display.contentWidth * .5
+	hardButton2Text.y = display.contentHeight * .3
+	hardButton2Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( hardButton2Text )
+
+	local hardButton3Text = display.newText("3", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	hardButton3Text.x = display.contentWidth * .8
+	hardButton3Text.y = display.contentHeight * .3
+	hardButton3Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( hardButton3Text )
+	
+	local hardButton4Text = display.newText("4", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	hardButton4Text.x = display.contentWidth * .2
+	hardButton4Text.y = display.contentHeight * .5
+	hardButton4Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( hardButton4Text )
+	
+	local hardButton5Text = display.newText("5", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	hardButton5Text.x = display.contentWidth * .5
+	hardButton5Text.y = display.contentHeight * .5
+	hardButton5Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( hardButton5Text )
+	
+	local hardButton6Text = display.newText("6", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	hardButton6Text.x = display.contentWidth * .8
+	hardButton6Text.y = display.contentHeight * .5
+	hardButton6Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( hardButton6Text )
+	
+	local hardButton7Text = display.newText("7", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	hardButton7Text.x = display.contentWidth * .2
+	hardButton7Text.y = display.contentHeight * .7
+	hardButton7Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( hardButton7Text )
+	
+	local hardButton8Text = display.newText("8", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	hardButton8Text.x = display.contentWidth * .5
+	hardButton8Text.y = display.contentHeight * .7
+	hardButton8Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( hardButton8Text )
+	
+	local hardButton9Text = display.newText("9", 100, 32, "Fonts/SuiGeneris.tff", 25 )
+	hardButton9Text.x = display.contentWidth * .8
+	hardButton9Text.y = display.contentHeight * .7
+	hardButton9Text:setFillColor( 1, 1, 1 )
+	sceneGroup:insert( hardButton9Text )
+	
+	local backButton = display.newRect( 0, 0, display.contentWidth/2.5, 50 )
+	backButton:setFillColor( 0, 0, 0, 100/255)
+	backButton.x = display.contentCenterX
+	backButton.y = display.contentHeight * .9
+	backButton:addEventListener( "tap", handleButtonEvent )
+	sceneGroup:insert( backButton )
+	
+	local backButtonText = display.newText("Back", 100, 32, "Fonts/HemiHead.tff", 25 )
+	backButtonText.x = display.contentCenterX
+	backButtonText.y = display.contentHeight * .9
+	backButtonText:setFillColor( 1, 1, 1, .9 )
+	sceneGroup:insert( backButtonText )
+	
 end
 	
 	-------------------------------------------------------------------------------------------------------------
