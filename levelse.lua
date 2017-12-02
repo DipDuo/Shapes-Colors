@@ -38,9 +38,18 @@ function scene:create( event )
 ---------------------------------------------------------------------------------------------------------------
 --load functions (levels) into scene
 
-    local title = display.newText("Easy Levels", 100, 32, native.systemFontBold, 32 )
+    --header   
+    local header = display.newRect( 0, 0, display.contentWidth, display.contentHeight*.25 )
+    header:setFillColor( 0, 0, 0, 150/255)
+    header.x = display.contentCenterX
+    header.y = 0
+    sceneGroup:insert( header )
+	
+
+    --Game Title    
+    local title = display.newText("Easy Levels", 100, 32, "Fonts/HemiHead.tff", 32 )
     title.x = display.contentCenterX
-    title.y = display.contentHeight*.1
+    title.y = display.contentHeight * .07
     title:setFillColor( 154/255, 205/255, 50/255)
     sceneGroup:insert( title )
 

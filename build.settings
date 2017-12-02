@@ -10,24 +10,24 @@ settings=
 	        plist =
 	        {
 	            CFBundleIconFiles = {
-		            "Icon.png",
-	                "Icon@2x.png",
-	                "Icon-60.png",
-	                "Icon-60@2x.png",
-	                "Icon-60@3x.png",
-	                "Icon-72.png",
-	                "Icon-72@2x.png",
-	                "Icon-76.png",
-	                "Icon-76@2x.png",
-	                "Icon-167.png",
-	                "Icon-Small-40.png",
-	                "Icon-Small-40@2x.png",
-	                "Icon-Small-40@3x.png",
-	                "Icon-Small-50.png",
-	                "Icon-Small-50@2x.png",
-	                "Icon-Small.png",
-	                "Icon-Small@2x.png",
-	                "Icon-Small@3x.png"
+		            "Images/Icons/Icon.png",
+	                "Images/Icons/Icon@2x.png",
+	                "Images/Icons/Icon-60.png",
+	                "Images/Icons/Icon-60@2x.png",
+	                "Images/Icons/Icon-60@3x.png",
+	                "Images/Icons/Icon-72.png",
+	                "Images/Icons/Icon-72@2x.png",
+	                "Images/Icons/Icon-76.png",
+	                "Images/Icons/Icon-76@2x.png",
+	                "Images/Icons/Icon-167.png",
+	                "Images/Icons/Icon-Small-40.png",
+	                "Images/Icons/Icon-Small-40@2x.png",
+	                "Images/Icons/Icon-Small-40@3x.png",
+	                "Images/Icons/Icon-Small-50.png",
+	                "Images/Icons/Icon-Small-50@2x.png",
+	                "Images/Icons/Icon-Small.png",
+	                "Images/Icons/Icon-Small@2x.png",
+	                "Images/Icons/Icon-Small@3x.png"
 	            },
 	            UILaunchImages = {
 	                {  --iPhone 4 Portait

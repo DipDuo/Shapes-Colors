@@ -59,13 +59,22 @@ function scene:create( event )
     sceneGroup:insert(background)
 
     
-    local title = display.newText("Shapes & Colors \n        Settings", 100, 32, native.systemFontBold, 32 )
-    title.x = display.contentCenterX 
-    title.y = 40
-    title:setFillColor( 0 )
+    --header   
+    local header = display.newRect( 0, 0, display.contentWidth, display.contentHeight*.25 )
+    header:setFillColor( 0, 0, 0, 150/255)
+    header.x = display.contentCenterX
+    header.y = 0
+    sceneGroup:insert( header )
+	
+
+    -- Title    
+    local title = display.newText("Settings", 100, 32, "Fonts/HemiHead.tff", 32 )
+    title.x = display.contentCenterX
+    title.y = display.contentHeight * .07
+    title:setFillColor( 154/255, 205/255, 50/255)
     sceneGroup:insert( title )
 
-    local soundLabel = display.newText("Sound Effects", 100, 32, native.systemFont, 18 )
+    local soundLabel = display.newText("Sound Effects", 100, 32, "Fonts/SuiGeneris.tff", 18 )
     soundLabel.x = display.contentCenterX - 75
     soundLabel.y = 130
     soundLabel:setFillColor( 0 )
@@ -81,7 +90,7 @@ function scene:create( event )
     soundOnOffSwitch.y = soundLabel.y
     sceneGroup:insert( soundOnOffSwitch )
 
-    local musicLabel = display.newText("Music", 100, 32, native.systemFont, 18 )
+    local musicLabel = display.newText("Music", 100, 32, "Fonts/SuiGeneris.tff", 18 )
     musicLabel.x = display.contentCenterX - 75
     musicLabel.y = 180
     musicLabel:setFillColor( 0 )

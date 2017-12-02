@@ -8,6 +8,13 @@ local myData = require("myData")
 local json = require("json")
 
 
+local systemFonts = native.getFontNames()
+ 
+-- Set the string to query for (part of the font name to locate)
+local searchString = "pt"
+ 
+
+
 ---------------------------------------------------------------------------------------------------------------
 --load functions into scene
 function scene:create( event )
@@ -15,26 +22,94 @@ function scene:create( event )
      
     --backgroud    
     local background = display.newRect( 0, 0, display.contentWidth, display.contentHeight )
-    background:setFillColor(46/255, 139/255, 87/255)
+    background:setFillColor(46/255, 139/255, 87/355)
     background.x = display.contentCenterX
     background.y = display.contentCenterY
     sceneGroup:insert( background )
 
+	--header   
+    local header = display.newRect( 0, 0, display.contentWidth, display.contentHeight*.25 )
+    header:setFillColor( 0, 0, 0, 150/255)
+    header.x = display.contentCenterX
+    header.y = 0
+    sceneGroup:insert( header )
+	
 
     --Game Title    
-    local title = display.newText("Shapes & Colors", 100, 32, native.systemFontBold, 32 )
+    local title = display.newText("Shapes & Colors", 100, 32, "Fonts/HemiHead.tff", 32 )
     title.x = display.contentCenterX
-    title.y = 40
+    title.y = display.contentHeight * .07
     title:setFillColor( 154/255, 205/255, 50/255)
     sceneGroup:insert( title )
 
     --Text 
-    local myText = display.newText ("Player, choose your comfort level.",0,0, nil, 15)   --adds tap function to screen
+    local myText = display.newText ("Player, choose your comfort level.",0,0, "Fonts/SuiGeneris.tff", 15)   --adds tap function to screen
     myText:setFillColor(1,1,1)
     myText.x=display.contentCenterX
-    myText.y=display.contentHeight-400
+    myText.y=display.contentHeight * .25
     sceneGroup:insert (myText)
-   
+	
+	
+	--buttons
+	
+	--Button1 (Easy)
+		local myButton1 = display.newRect( 0, 0, display.contentWidth/2.5, 50 )
+		myButton1:setFillColor( 0, 0, 0, 100/255)
+		myButton1.x = display.contentCenterX
+		myButton1.y = display.contentHeight * .40
+		sceneGroup:insert( myButton1 )
+		
+		   
+		local myButtonText1 = display.newText("Easy", 100, 32, "Fonts/HemiHead.tff", 25 )
+		myButtonText1.x = display.contentCenterX
+		myButtonText1.y = display.contentHeight * .40
+		myButtonText1:setFillColor( 34/255,139/255,34/255, .9 )
+		sceneGroup:insert( myButtonText1 )
+		
+	--Button2 (Medium)
+		local myButton2 = display.newRect( 0, 0, display.contentWidth/2.5, 50 )
+		myButton2:setFillColor( 0, 0, 0, 100/255)
+		myButton2.x = display.contentCenterX
+		myButton2.y = display.contentHeight * .55
+		sceneGroup:insert( myButton2 )
+		
+
+		local myButtonText2 = display.newText("Medium", 100, 32, "Fonts/HemiHead.tff", 25 )
+		myButtonText2.x = display.contentCenterX
+		myButtonText2.y = display.contentHeight * .55
+		myButtonText2:setFillColor( 1, 1, 0, .9 )
+		sceneGroup:insert( myButtonText2 )
+	
+	--Button3 (Hard)
+		local myButton3 = display.newRect( 0, 0, display.contentWidth/2.5, 50 )
+		myButton3:setFillColor( 0, 0, 0, 100/255)
+		myButton3.x = display.contentCenterX
+		myButton3.y = display.contentHeight * .70
+		sceneGroup:insert( myButton3 )
+		
+		   
+		local myButtonText3 = display.newText("Hard", 150, 500, "Fonts/HemiHead.tff", 25 )
+		myButtonText3.x = display.contentCenterX
+		myButtonText3.y = display.contentHeight * .70
+		myButtonText3:setFillColor( 4, 0, 0, .9 )
+		sceneGroup:insert( myButtonText3 )
+	
+	--Button3 (Settings)
+		local myButton4 = display.newRect( 0, 0, display.contentWidth/2.5, 50 )
+		myButton4:setFillColor( 0, 0, 0, 100/255 )
+		myButton4.x = display.contentCenterX
+		myButton4.y = display.contentHeight * .90
+		sceneGroup:insert( myButton4 )
+		
+		 
+		local myButtonText4 = display.newText("Settings", 100, 32, "Fonts/HemiHead.tff", 25 )
+		myButtonText4.x = display.contentCenterX
+		myButtonText4.y = display.contentHeight * .90
+		myButtonText4:setFillColor( 1, 1, 1, .9 )
+		sceneGroup:insert( myButtonText4 )
+	
+	
+   --[[
     --local buttons
     local myButton1 = display.newImage("Images/Buttons/easy.png")
     myButton1.x=display.contentCenterX
@@ -59,6 +134,8 @@ function scene:create( event )
     myButton4.y=display.contentHeight-50
     myButton4:scale (.5,.5)
     sceneGroup:insert (myButton4)
+	
+	]]--
 
 -------------------------------------------------------------------------------------------------------------
 
