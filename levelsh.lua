@@ -45,7 +45,7 @@ function scene:create( event )
     sceneGroup:insert( title )
 
 	--Goes through all the buttons
-	local hardButton1 = display.newImage("1g.png")
+	local hardButton1 = display.newImage("Images/Levels/1g.png")
     hardButton1.x=display.contentWidth*.25
     hardButton1.y=display.contentHeight*.3
     hardButton1:scale (.5,.5)
@@ -61,7 +61,7 @@ function scene:create( event )
 	
 		--If statements needed for these to decide whether or not the level is unlocked.
     if myData.settings.hardLevel >= 2 then
-		local hardButton2 = display.newImage("2g.png")
+		local hardButton2 = display.newImage("Images/Levels/2g.png")
 		hardButton2.x=display.contentWidth*.5
 		hardButton2.y=display.contentHeight*.3
 		hardButton2:scale (.5,.5)
@@ -73,7 +73,7 @@ function scene:create( event )
 		end
 		hardButton2:addEventListener("tap", nextScene2)
 	else
-		local hardButton2 = display.newImage("2r.png")
+		local hardButton2 = display.newImage("Images/Levels/2r.png")
 		hardButton2.x=display.contentWidth*.5
 		hardButton2.y=display.contentHeight*.3
 		hardButton2:scale (.5,.5)
@@ -81,7 +81,7 @@ function scene:create( event )
 	end
     
     if myData.settings.hardLevel >= 3 then
-		local hardButton3 = display.newImage("3g.png")
+		local hardButton3 = display.newImage("Images/Levels/3g.png")
 		hardButton3.x=display.contentWidth*.75
 		hardButton3.y=display.contentHeight*.3
 		hardButton3:scale (.5,.5)
@@ -94,7 +94,7 @@ function scene:create( event )
 		hardButton3:addEventListener("tap", nextScene3)
 	
 	else
-		local hardButton3 = display.newImage("3r.png")
+		local hardButton3 = display.newImage("Images/Levels/3r.png")
 		hardButton3.x=display.contentWidth*.75
 		hardButton3.y=display.contentHeight*.3
 		hardButton3:scale (.5,.5)
@@ -103,7 +103,7 @@ function scene:create( event )
 
 	
 	if myData.settings.hardLevel >= 4 then
-		local hardButton4 = display.newImage("4g.png")
+		local hardButton4 = display.newImage("Images/Levels/4g.png")
 		hardButton4.x=display.contentWidth*.25
 		hardButton4.y=display.contentHeight*.5
 		hardButton4:scale (.5,.5)
@@ -115,7 +115,7 @@ function scene:create( event )
 		end
 		hardButton4:addEventListener("tap", nextScene4)
 	else
-		local hardButton4 = display.newImage("4r.png")
+		local hardButton4 = display.newImage("Images/Levels/4r.png")
 		hardButton4.x=display.contentWidth*.25
 		hardButton4.y=display.contentHeight*.5
 		hardButton4:scale (.5,.5)
@@ -124,7 +124,7 @@ function scene:create( event )
 
 
     if myData.settings.hardLevel >= 5 then
-		local hardButton5 = display.newImage("5g.png")
+		local hardButton5 = display.newImage("Images/Levels/5g.png")
 		hardButton5.x=display.contentWidth*.5
 		hardButton5.y=display.contentHeight*.5
 		hardButton5:scale (.5,.5)
@@ -136,7 +136,7 @@ function scene:create( event )
 		end
 		hardButton5:addEventListener("tap", nextScene5)
 	else
-		local hardButton5 = display.newImage("5r.png")
+		local hardButton5 = display.newImage("Images/Levels/5r.png")
 	    hardButton5.x=display.contentWidth*.5
 		hardButton5.y=display.contentHeight*.5
 		hardButton5:scale (.5,.5)
@@ -145,7 +145,7 @@ function scene:create( event )
 
     
     if myData.settings.hardLevel >= 6 then
-		local hardButton6 = display.newImage("6g.png")
+		local hardButton6 = display.newImage("Images/Levels/6g.png")
 	    hardButton6.x=display.contentWidth*.75
 		hardButton6.y=display.contentHeight*.5
 		hardButton6:scale (.5,.5)
@@ -157,7 +157,7 @@ function scene:create( event )
 		end
 		hardButton6:addEventListener("tap", nextScene6)
 	else
-		local hardButton6 = display.newImage("6r.png")
+		local hardButton6 = display.newImage("Images/Levels/6r.png")
 	    hardButton6.x=display.contentWidth*.75
 		hardButton6.y=display.contentHeight*.5
 		hardButton6:scale (.5,.5)
@@ -166,7 +166,7 @@ function scene:create( event )
 
 
     if myData.settings.hardLevel >= 7 then
-		local hardButton7 = display.newImage("7g.png")
+		local hardButton7 = display.newImage("Images/Levels/7g.png")
 	    hardButton7.x=display.contentWidth*.25
 		hardButton7.y=display.contentHeight*.7
 		hardButton7:scale (.5,.5)
@@ -179,7 +179,7 @@ function scene:create( event )
 		hardButton7:addEventListener("tap", nextScene7)
 	
 	else
-		local hardButton7 = display.newImage("7r.png")
+		local hardButton7 = display.newImage("Images/Levels/7r.png")
 	    hardButton7.x=display.contentWidth*.25
 		hardButton7.y=display.contentHeight*.7
 		hardButton7:scale (.5,.5)
@@ -188,7 +188,7 @@ function scene:create( event )
 
 	
     if myData.settings.hardLevel >= 8 then
-		local hardButton8 = display.newImage("8g.png")
+		local hardButton8 = display.newImage("Images/Levels/8g.png")
 		hardButton8.x=display.contentWidth*.5
 		hardButton8.y=display.contentHeight*.7
 		hardButton8:scale (.5,.5)
@@ -200,7 +200,7 @@ function scene:create( event )
 		end
 		hardButton8:addEventListener("tap", nextScene8)
 	else
-		local hardButton8 = display.newImage("8r.png")
+		local hardButton8 = display.newImage("Images/Levels/8r.png")
 		hardButton8.x=display.contentWidth*.5
 		hardButton8.y=display.contentHeight*.7
 		hardButton8:scale (.5,.5)
@@ -209,7 +209,7 @@ function scene:create( event )
 	
     
 	if myData.settings.hardLevel >= 9 then
-		local hardButton9 = display.newImage("9g.png")
+		local hardButton9 = display.newImage("Images/Levels/9g.png")
 		hardButton9.x=display.contentWidth*.75
 		hardButton9.y=display.contentHeight*.7
 		hardButton9:scale (.5,.5)
@@ -221,7 +221,7 @@ function scene:create( event )
 		end
 		hardButton9:addEventListener("tap", nextScene9)
 	else
-		local hardButton9 = display.newImage("9r.png")
+		local hardButton9 = display.newImage("Images/Levels/9r.png")
 		hardButton9.x=display.contentWidth*.75
 		hardButton9.y=display.contentHeight*.7
 		hardButton9:scale (.5,.5)

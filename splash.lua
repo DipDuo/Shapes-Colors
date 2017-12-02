@@ -14,7 +14,7 @@ centerY = display.contentHeight/2
 function scene:create(event)
 
 	local sceneGroup = self.view
-	splash=display.newImage("Splash.png", true)  -- loads image for splash screen
+	splash=display.newImage("Images/Splash.png", true)  -- loads image for splash screen
 	splash.x=centerX
 	splash.y=centerY
 	sceneGroup:insert (splash)

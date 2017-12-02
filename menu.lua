@@ -36,25 +36,25 @@ function scene:create( event )
     sceneGroup:insert (myText)
    
     --local buttons
-    local myButton1 = display.newImage("button1.png")
+    local myButton1 = display.newImage("Images/Buttons/easy.png")
     myButton1.x=display.contentCenterX
     myButton1.y=display.contentHeight-290
     myButton1:scale (.5,.5)
     sceneGroup:insert (myButton1)
     
-    local myButton2 = display.newImage("button2.png")
+    local myButton2 = display.newImage("Images/Buttons/medium.png")
     myButton2.x=display.contentCenterX
     myButton2.y=display.contentHeight-220
     myButton2:scale (.5,.5)
     sceneGroup:insert (myButton2)
     
-    local myButton3 = display.newImage("button3.png")
+    local myButton3 = display.newImage("Images/Buttons/hard.png")
     myButton3.x=display.contentCenterX
     myButton3.y=display.contentHeight-150
     myButton3:scale (.5,.5)
     sceneGroup:insert (myButton3)
 
-    local myButton4 = display.newImage("button4.png")
+    local myButton4 = display.newImage("Images/Buttons/settings.png")
     myButton4.x=display.contentCenterX
     myButton4.y=display.contentHeight-50
     myButton4:scale (.5,.5)

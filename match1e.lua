@@ -40,7 +40,7 @@ function scene:create(event)
 		numFrames = total_frames
 	}
 
-	local sheet = graphics.newImageSheet( "sprite.png", sheetInfo:getSheet ())
+	local sheet = graphics.newImageSheet( "Images/sprite.png", sheetInfo:getSheet ())
 	local image_group = display.newGroup()
 	
 	local frameIndexMatch = math.random( total_frames )

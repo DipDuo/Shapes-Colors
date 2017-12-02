@@ -45,7 +45,7 @@ function scene:create( event )
     sceneGroup:insert( title )
 
 	--Goes through all the buttons
-	local medButton1 = display.newImage("1g.png")
+	local medButton1 = display.newImage("Images/Levels/1g.png")
     medButton1.x=display.contentWidth*.25
     medButton1.y=display.contentHeight*.3
     medButton1:scale (.5,.5)
@@ -61,7 +61,7 @@ function scene:create( event )
 	
 		--If statements needed for these to decide whether or not the level is unlocked.
     if myData.settings.medLevel >= 2 then
-		local medButton2 = display.newImage("2g.png")
+		local medButton2 = display.newImage("Images/Levels/2g.png")
 		medButton2.x=display.contentWidth*.5
 		medButton2.y=display.contentHeight*.3
 		medButton2:scale (.5,.5)
@@ -73,7 +73,7 @@ function scene:create( event )
 		end
 		medButton2:addEventListener("tap", nextScene2)
 	else
-		local medButton2 = display.newImage("2r.png")
+		local medButton2 = display.newImage("Images/Levels/2r.png")
 		medButton2.x=display.contentWidth*.5
 		medButton2.y=display.contentHeight*.3
 		medButton2:scale (.5,.5)
@@ -81,7 +81,7 @@ function scene:create( event )
 	end
     
     if myData.settings.medLevel >= 3 then
-		local medButton3 = display.newImage("3g.png")
+		local medButton3 = display.newImage("Images/Levels/3g.png")
 		medButton3.x=display.contentWidth*.75
 		medButton3.y=display.contentHeight*.3
 		medButton3:scale (.5,.5)
@@ -94,7 +94,7 @@ function scene:create( event )
 		medButton3:addEventListener("tap", nextScene3)
 	
 	else
-		local medButton3 = display.newImage("3r.png")
+		local medButton3 = display.newImage("Images/Levels/3r.png")
 		medButton3.x=display.contentWidth*.75
 		medButton3.y=display.contentHeight*.3
 		medButton3:scale (.5,.5)
@@ -103,7 +103,7 @@ function scene:create( event )
 
 	
 	if myData.settings.medLevel >= 4 then
-		local medButton4 = display.newImage("4g.png")
+		local medButton4 = display.newImage("Images/Levels/4g.png")
 		medButton4.x=display.contentWidth*.25
 		medButton4.y=display.contentHeight*.5
 		medButton4:scale (.5,.5)
@@ -115,7 +115,7 @@ function scene:create( event )
 		end
 		medButton4:addEventListener("tap", nextScene4)
 	else
-		local medButton4 = display.newImage("4r.png")
+		local medButton4 = display.newImage("Images/Levels/4r.png")
 		medButton4.x=display.contentWidth*.25
 		medButton4.y=display.contentHeight*.5
 		medButton4:scale (.5,.5)
@@ -124,7 +124,7 @@ function scene:create( event )
 
 
     if myData.settings.medLevel >= 5 then
-		local medButton5 = display.newImage("5g.png")
+		local medButton5 = display.newImage("Images/Levels/5g.png")
 		medButton5.x=display.contentWidth*.5
 		medButton5.y=display.contentHeight*.5
 		medButton5:scale (.5,.5)
@@ -136,7 +136,7 @@ function scene:create( event )
 		end
 		medButton5:addEventListener("tap", nextScene5)
 	else
-		local medButton5 = display.newImage("5r.png")
+		local medButton5 = display.newImage("Images/Levels/5r.png")
 	    medButton5.x=display.contentWidth*.5
 		medButton5.y=display.contentHeight*.5
 		medButton5:scale (.5,.5)
@@ -145,7 +145,7 @@ function scene:create( event )
 
     
     if myData.settings.medLevel >= 6 then
-		local medButton6 = display.newImage("6g.png")
+		local medButton6 = display.newImage("Images/Levels/6g.png")
 	    medButton6.x=display.contentWidth*.75
 		medButton6.y=display.contentHeight*.5
 		medButton6:scale (.5,.5)
@@ -157,7 +157,7 @@ function scene:create( event )
 		end
 		medButton6:addEventListener("tap", nextScene6)
 	else
-		local medButton6 = display.newImage("6r.png")
+		local medButton6 = display.newImage("Images/Levels/6r.png")
 	    medButton6.x=display.contentWidth*.75
 		medButton6.y=display.contentHeight*.5
 		medButton6:scale (.5,.5)
@@ -166,7 +166,7 @@ function scene:create( event )
 
 
     if myData.settings.medLevel >= 7 then
-		local medButton7 = display.newImage("7g.png")
+		local medButton7 = display.newImage("Images/Levels/7g.png")
 	    medButton7.x=display.contentWidth*.25
 		medButton7.y=display.contentHeight*.7
 		medButton7:scale (.5,.5)
@@ -179,7 +179,7 @@ function scene:create( event )
 		medButton7:addEventListener("tap", nextScene7)
 	
 	else
-		local medButton7 = display.newImage("7r.png")
+		local medButton7 = display.newImage("Images/Levels/7r.png")
 	    medButton7.x=display.contentWidth*.25
 		medButton7.y=display.contentHeight*.7
 		medButton7:scale (.5,.5)
@@ -188,7 +188,7 @@ function scene:create( event )
 
 	
     if myData.settings.medLevel >= 8 then
-		local medButton8 = display.newImage("8g.png")
+		local medButton8 = display.newImage("Images/Levels/8g.png")
 		medButton8.x=display.contentWidth*.5
 		medButton8.y=display.contentHeight*.7
 		medButton8:scale (.5,.5)
@@ -200,7 +200,7 @@ function scene:create( event )
 		end
 		medButton8:addEventListener("tap", nextScene8)
 	else
-		local medButton8 = display.newImage("8r.png")
+		local medButton8 = display.newImage("Images/Levels/8r.png")
 		medButton8.x=display.contentWidth*.5
 		medButton8.y=display.contentHeight*.7
 		medButton8:scale (.5,.5)
@@ -209,7 +209,7 @@ function scene:create( event )
 	
     
 	if myData.settings.medLevel >= 9 then
-		local medButton9 = display.newImage("9g.png")
+		local medButton9 = display.newImage("Images/Levels/9g.png")
 		medButton9.x=display.contentWidth*.75
 		medButton9.y=display.contentHeight*.7
 		medButton9:scale (.5,.5)
@@ -221,7 +221,7 @@ function scene:create( event )
 		end
 		medButton9:addEventListener("tap", nextScene9)
 	else
-		local medButton9 = display.newImage("9r.png")
+		local medButton9 = display.newImage("Images/Levels/9r.png")
 		medButton9.x=display.contentWidth*.75
 		medButton9.y=display.contentHeight*.7
 		medButton9:scale (.5,.5)

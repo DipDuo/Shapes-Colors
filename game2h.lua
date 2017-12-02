@@ -13,9 +13,9 @@ local currentScoreDisplay   -- will be a display.newText() that draws the score 
 local levelText             -- will be a display.newText() to let you know what level you're on
 local spawnTimer			-- used to stop/star spawn object timer
 local gameTime
-local correct = audio.loadSound("correct.wav")
-local wrong = audio.loadSound("wrong.wav")
-local music = audio.loadSound("music.mp3")
+local correct = audio.loadSound("Audio/correct.wav")
+local wrong = audio.loadSound("Audio/wrong.wav")
+local music = audio.loadSound("Audio/music.mp3")
 
 ----------------------------------------------------------------------------------------------------------------------
 --load functions into scene
@@ -114,7 +114,7 @@ function scene:create (event)
 		numFrames = total_frames
 	}
 
-	local sheet = graphics.newImageSheet( "sprite.png", sheetInfo:getSheet ())
+	local sheet = graphics.newImageSheet( "Images/sprite.png", sheetInfo:getSheet ())
 	local image_group = display.newGroup()
 	--spawn object function
 	function spawn ( event )

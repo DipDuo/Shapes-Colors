@@ -45,7 +45,7 @@ function scene:create( event )
     sceneGroup:insert( title )
 
 	--Goes through all the buttons
-	local easyButton1 = display.newImage("1g.png",true)
+	local easyButton1 = display.newImage("Images/Levels/1g.png",true)
     easyButton1.x=display.contentWidth*.25
     easyButton1.y=display.contentHeight*.3
     easyButton1:scale (.5,.5)
@@ -61,7 +61,7 @@ function scene:create( event )
 	
 		--If statements needed for these to decide whether or not the level is unlocked.
     if myData.settings.easyLevel >= 2 then
-		local easyButton2 = display.newImage("2g.png")
+		local easyButton2 = display.newImage("Images/Levels/2g.png")
 		easyButton2.x=display.contentWidth*.5
 		easyButton2.y=display.contentHeight*.3
 		easyButton2:scale (.5,.5)
@@ -73,7 +73,7 @@ function scene:create( event )
 		end
 		easyButton2:addEventListener("tap", nextScene2)
 	else
-		local easyButton2 = display.newImage("2r.png")
+		local easyButton2 = display.newImage("Images/Levels/2r.png")
 		easyButton2.x=display.contentWidth*.5
 		easyButton2.y=display.contentHeight*.3
 		easyButton2:scale (.5,.5)
@@ -81,7 +81,7 @@ function scene:create( event )
 	end
     
     if myData.settings.easyLevel >= 3 then
-		local easyButton3 = display.newImage("3g.png")
+		local easyButton3 = display.newImage("Images/Levels/3g.png")
 		easyButton3.x=display.contentWidth*.75
 		easyButton3.y=display.contentHeight*.3
 		easyButton3:scale (.5,.5)
@@ -94,7 +94,7 @@ function scene:create( event )
 		easyButton3:addEventListener("tap", nextScene3)
 	
 	else
-		local easyButton3 = display.newImage("3r.png")
+		local easyButton3 = display.newImage("Images/Levels/3r.png")
 		easyButton3.x=display.contentWidth*.75
 		easyButton3.y=display.contentHeight*.3
 		easyButton3:scale (.5,.5)
@@ -103,7 +103,7 @@ function scene:create( event )
 
 	
 	if myData.settings.easyLevel >= 4 then
-		local easyButton4 = display.newImage("4g.png")
+		local easyButton4 = display.newImage("Images/Levels/4g.png")
 		easyButton4.x=display.contentWidth*.25
 		easyButton4.y=display.contentHeight*.5
 		easyButton4:scale (.5,.5)
@@ -115,7 +115,7 @@ function scene:create( event )
 		end
 		easyButton4:addEventListener("tap", nextScene4)
 	else
-		local easyButton4 = display.newImage("4r.png")
+		local easyButton4 = display.newImage("Images/Levels/4r.png")
 		easyButton4.x=display.contentWidth*.25
 		easyButton4.y=display.contentHeight*.5
 		easyButton4:scale (.5,.5)
@@ -124,7 +124,7 @@ function scene:create( event )
 
 
     if myData.settings.easyLevel >= 5 then
-		local easyButton5 = display.newImage("5g.png")
+		local easyButton5 = display.newImage("Images/Levels/5g.png")
 		easyButton5.x=display.contentWidth*.5
 		easyButton5.y=display.contentHeight*.5
 		easyButton5:scale (.5,.5)
@@ -136,7 +136,7 @@ function scene:create( event )
 		end
 		easyButton5:addEventListener("tap", nextScene5)
 	else
-		local easyButton5 = display.newImage("5r.png")
+		local easyButton5 = display.newImage("Images/Levels/5r.png")
 	    easyButton5.x=display.contentWidth*.5
 		easyButton5.y=display.contentHeight*.5
 		easyButton5:scale (.5,.5)
@@ -145,7 +145,7 @@ function scene:create( event )
 
     
     if myData.settings.easyLevel >= 6 then
-		local easyButton6 = display.newImage("6g.png")
+		local easyButton6 = display.newImage("Images/Levels/6g.png")
 	    easyButton6.x=display.contentWidth*.75
 		easyButton6.y=display.contentHeight*.5
 		easyButton6:scale (.5,.5)
@@ -157,7 +157,7 @@ function scene:create( event )
 		end
 		easyButton6:addEventListener("tap", nextScene6)
 	else
-		local easyButton6 = display.newImage("6r.png")
+		local easyButton6 = display.newImage("Images/Levels/6r.png")
 	    easyButton6.x=display.contentWidth*.75
 		easyButton6.y=display.contentHeight*.5
 		easyButton6:scale (.5,.5)
@@ -166,7 +166,7 @@ function scene:create( event )
 
 
     if myData.settings.easyLevel >= 7 then
-		local easyButton7 = display.newImage("7g.png")
+		local easyButton7 = display.newImage("Images/Levels/7g.png")
 	    easyButton7.x=display.contentWidth*.25
 		easyButton7.y=display.contentHeight*.7
 		easyButton7:scale (.5,.5)
@@ -179,7 +179,7 @@ function scene:create( event )
 		easyButton7:addEventListener("tap", nextScene7)
 	
 	else
-		local easyButton7 = display.newImage("7r.png")
+		local easyButton7 = display.newImage("Images/Levels/7r.png")
 	    easyButton7.x=display.contentWidth*.25
 		easyButton7.y=display.contentHeight*.7
 		easyButton7:scale (.5,.5)
@@ -188,7 +188,7 @@ function scene:create( event )
 
 	
     if myData.settings.easyLevel >= 8 then
-		local easyButton8 = display.newImage("8g.png")
+		local easyButton8 = display.newImage("Images/Levels/8g.png")
 		easyButton8.x=display.contentWidth*.5
 		easyButton8.y=display.contentHeight*.7
 		easyButton8:scale (.5,.5)
@@ -200,7 +200,7 @@ function scene:create( event )
 		end
 		easyButton8:addEventListener("tap", nextScene8)
 	else
-		local easyButton8 = display.newImage("8r.png")
+		local easyButton8 = display.newImage("Images/Levels/8r.png")
 		easyButton8.x=display.contentWidth*.5
 		easyButton8.y=display.contentHeight*.7
 		easyButton8:scale (.5,.5)
@@ -209,7 +209,7 @@ function scene:create( event )
 	
     
 	if myData.settings.easyLevel >= 9 then
-		local easyButton9 = display.newImage("9g.png")
+		local easyButton9 = display.newImage("Images/Levels/9g.png")
 		easyButton9.x=display.contentWidth*.75
 		easyButton9.y=display.contentHeight*.7
 		easyButton9:scale (.5,.5)
@@ -221,7 +221,7 @@ function scene:create( event )
 		end
 		easyButton9:addEventListener("tap", nextScene9)
 	else
-		local easyButton9 = display.newImage("9r.png")
+		local easyButton9 = display.newImage("Images/Levels/9r.png")
 		easyButton9.x=display.contentWidth*.75
 		easyButton9.y=display.contentHeight*.7
 		easyButton9:scale (.5,.5)
